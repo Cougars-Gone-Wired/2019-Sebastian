@@ -38,6 +38,6 @@ public class Drive {
 	
 	public void setArcadeDriveSpeed(double driveForwardAxis, double driveTurnAxis) {
 		driveForwardAxisValue = Utility.deadZone(driveForwardAxis * Constants.DRIVE_SPEED);
-		driveTurnAxisValue = Utility.invertDouble(Utility.deadZone(driveTurnAxis * Constants.DRIVE_SPEED));
+		driveTurnAxisValue = -Utility.deadZone(driveTurnAxis * Constants.DRIVE_SPEED);
 	}
 }

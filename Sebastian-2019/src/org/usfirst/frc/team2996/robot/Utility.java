@@ -9,8 +9,4 @@ public class Utility {
 			return 0;
 		}
 	}
-	
-	public static double invertDouble(double doubleValue) {
-		return -doubleValue;
-	}
 }
