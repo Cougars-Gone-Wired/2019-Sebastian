@@ -20,12 +20,12 @@ public class Drive {
 	double driveTurnAxisValue;
 	
 	public Drive(){
-		frontLeftMotor = new Talon(Constants.FRONT_LEFT_MOTOR_ID);
-		rearLeftMotor = new Talon(Constants.REAR_LEFT_MOTOR_ID);
+		frontLeftMotor = new Talon(Constants.FRONT_LEFT_MOTOR_PORT);
+		rearLeftMotor = new Talon(Constants.REAR_LEFT_MOTOR_PORT);
 		leftMotors = new SpeedControllerGroup(frontLeftMotor, rearLeftMotor);
 		
-		frontRightMotor = new Talon(Constants.FRONT_RIGHT_MOTOR_ID);
-		rearRightMotor = new Talon(Constants.REAR_RIGHT_MOTOR_ID);
+		frontRightMotor = new Talon(Constants.FRONT_RIGHT_MOTOR_PORT);
+		rearRightMotor = new Talon(Constants.REAR_RIGHT_MOTOR_PORT);
 		rightMotors = new SpeedControllerGroup(frontRightMotor, rearRightMotor);
 		
 		robotDrive = new DifferentialDrive(leftMotors, rightMotors);

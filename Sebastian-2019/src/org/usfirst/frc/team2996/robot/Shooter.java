@@ -13,7 +13,7 @@ public class Shooter {
 	private Talon shooterMotor;
 	
 	public Shooter() {
-		shooterMotor = new Talon(Constants.SHOOTER_MOTOR_ID);
+		shooterMotor = new Talon(Constants.SHOOTER_MOTOR_PORT);
 	}
 	
 	public void shooter(boolean shooterButton) {

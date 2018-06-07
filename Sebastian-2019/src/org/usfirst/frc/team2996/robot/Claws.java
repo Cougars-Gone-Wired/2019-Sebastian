@@ -13,7 +13,7 @@ public class Claws {
 	private Talon clawsMotor;
 	
 	public Claws() {
-		clawsMotor = new Talon(Constants.CLAWS_MOTOR_ID);
+		clawsMotor = new Talon(Constants.CLAWS_MOTOR_PORT);
 	}
 	
 	public void claws(boolean clawsUpBumper, boolean clawsDownBumper) {

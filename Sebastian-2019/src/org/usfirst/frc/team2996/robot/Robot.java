@@ -8,30 +8,26 @@ public class Robot extends IterativeRobot {
 	
 	private Shooter shooter;
 	private Chain chain;
-	
-	private Drive drive;
 	private Claws claws;
-	
+	private Drive drive;
+
 	@Override
 	public void robotInit() {
 		joysticks = new Controller();
 		
 		shooter = new Shooter();
 		chain = new Chain();
-		
-		drive = new Drive();
 		claws = new Claws();
+		drive = new Drive();
 	}
 
 	@Override
 	public void teleopPeriodic() {
-		joysticks.setJoystickInputValues();
+		joysticks.setControllerInputValues();
 		
 		shooter.shooter(joysticks.isShooterButton());
 		chain.chain(joysticks.getChainTrigger());
-		
+		claws.claws(joysticks.isClawsUpBumper(), joysticks.isClawsDownBumper());
 		drive.arcadeDrive(joysticks.getDriveForwardAxis(), joysticks.getDriveTurnAxis());
-		claws.claws(joysticks.isClawsUpBumper(), joysticks.isClawsDownTrigger());
 	}
-
 }

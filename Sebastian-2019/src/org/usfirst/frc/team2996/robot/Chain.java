@@ -13,7 +13,7 @@ public class Chain {
 	private Talon chainMotor;
 	
 	public Chain() {
-		chainMotor = new Talon(Constants.CHAIN_MOTOR_ID);
+		chainMotor = new Talon(Constants.CHAIN_MOTOR_PORT);
 	}
 	
 	public void chain(double chainTrigger) {
