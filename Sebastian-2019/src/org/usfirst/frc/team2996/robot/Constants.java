@@ -18,6 +18,6 @@ public class Constants {
 	static final int FRONT_RIGHT_MOTOR_PORT = 5;
 	static final int REAR_RIGHT_MOTOR_PORT = 6;
 	
-	static final int SHOOTER_SPEED = 1;
-	static final int DRIVE_SPEED = 1;
+	static final double SHOOTER_SPEED = .4;
+	static final double DRIVE_SPEED = 1;
 }
