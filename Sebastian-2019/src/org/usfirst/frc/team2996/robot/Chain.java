@@ -11,7 +11,7 @@ public class Chain {
 	}
 	
 	public enum ChainStates {
-		NOT_MOVING, FORWARD
+		NOT_MOVING, MOVING_FORWARD
 	}
 	
 	ChainStates currentChainState = ChainStates.NOT_MOVING;
@@ -21,10 +21,10 @@ public class Chain {
 		case NOT_MOVING:
 			if (chainTrigger >= 0.15) {
 				chainMotor.set(1);
-				currentChainState = ChainStates.FORWARD;
+				currentChainState = ChainStates.MOVING_FORWARD;
 			}
 			break;
-		case FORWARD:
+		case MOVING_FORWARD:
 			if (chainTrigger < 0.15) {
 				chainMotor.set(0);
 				currentChainState = ChainStates.NOT_MOVING;
