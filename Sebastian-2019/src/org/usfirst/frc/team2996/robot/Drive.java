@@ -15,10 +15,7 @@ public class Drive {
 	private SpeedControllerGroup rightMotors;
 	
 	private DifferentialDrive robotDrive;
-	
-	double driveForwardAxisValue;
-	double driveTurnAxisValue;
-	
+
 	public Drive(){
 		frontLeftMotor = new Talon(Constants.FRONT_LEFT_MOTOR_PORT);
 		rearLeftMotor = new Talon(Constants.REAR_LEFT_MOTOR_PORT);
@@ -32,12 +29,10 @@ public class Drive {
 	}
 	
 	public void arcadeDrive(double driveForwardAxis, double driveTurnAxis) {
-		setArcadeDriveSpeed(driveForwardAxis, driveTurnAxis);
-		robotDrive.arcadeDrive(driveForwardAxisValue, driveTurnAxisValue);
+		driveForwardAxis = -Utility.deadZone(driveForwardAxis * Constants.DRIVE_SPEED) * Constants.DRIVE_FORWARD_CONSTANT;
+		driveTurnAxis = Utility.deadZone(driveTurnAxis * Constants.DRIVE_SPEED) * Constants.DRIVE_TURN_CONSTANT;
+		
+		robotDrive.arcadeDrive(driveForwardAxis, driveTurnAxis);
 	}
 	
-	public void setArcadeDriveSpeed(double driveForwardAxis, double driveTurnAxis) {
-		driveForwardAxisValue = -Utility.deadZone(driveForwardAxis * Constants.DRIVE_SPEED);
-		driveTurnAxisValue = Utility.deadZone(driveTurnAxis * Constants.DRIVE_SPEED);
-	}
 }

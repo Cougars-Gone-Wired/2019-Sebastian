@@ -20,4 +20,7 @@ public class Constants {
 	
 	static final double SHOOTER_SPEED = .4;
 	static final double DRIVE_SPEED = 1;
+	
+	static final double DRIVE_FORWARD_CONSTANT = .95;
+	static final double DRIVE_TURN_CONSTANT = .75;
 }

@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 
 public class Robot extends IterativeRobot {
 
-	private Controller joysticks;
+	private Controller controller;
 	
 	private Shooter shooter;
 	private Chain chain;
@@ -13,7 +13,7 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void robotInit() {
-		joysticks = new Controller();
+		controller = new Controller();
 		
 		shooter = new Shooter();
 		chain = new Chain();
@@ -23,11 +23,11 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void teleopPeriodic() {
-		joysticks.setControllerInputValues();
+		controller.setControllerInputValues();
 		
-		shooter.shooter(joysticks.isShooterButton());
-		chain.chain(joysticks.getChainTrigger());
-		claws.claws(joysticks.isClawsUpBumper(), joysticks.isClawsDownBumper());
-		drive.arcadeDrive(joysticks.getDriveForwardAxis(), joysticks.getDriveTurnAxis());
+		shooter.shooter(controller.isShooterButton());
+		chain.chain(controller.getChainTrigger());
+		claws.claws(controller.isClawsUpBumper(), controller.isClawsDownBumper());
+		drive.arcadeDrive(controller.getDriveForwardAxis(), controller.getDriveTurnAxis());
 	}
 }

@@ -4,17 +4,17 @@ import edu.wpi.first.wpilibj.Talon;
 
 public class Chain {
 
-	public enum ChainStates {
-		NOT_MOVING, FORWARD
-	}
-	
-	ChainStates currentChainState = ChainStates.NOT_MOVING;
-	
 	private Talon chainMotor;
 	
 	public Chain() {
 		chainMotor = new Talon(Constants.CHAIN_MOTOR_PORT);
 	}
+	
+	public enum ChainStates {
+		NOT_MOVING, FORWARD
+	}
+	
+	ChainStates currentChainState = ChainStates.NOT_MOVING;
 	
 	public void chain(double chainTrigger) {
 		switch(currentChainState) {

@@ -3,18 +3,18 @@ package org.usfirst.frc.team2996.robot;
 import edu.wpi.first.wpilibj.Talon;
 
 public class Claws {
-
-	public enum ClawsStates {
-		NOT_MOVING, GOING_UP, GOING_DOWN
-	}
-	
-	ClawsStates currentClawsState = ClawsStates.NOT_MOVING;
 	
 	private Talon clawsMotor;
 	
 	public Claws() {
 		clawsMotor = new Talon(Constants.CLAWS_MOTOR_PORT);
 	}
+	
+	public enum ClawsStates {
+		NOT_MOVING, GOING_UP, GOING_DOWN
+	}
+	
+	ClawsStates currentClawsState = ClawsStates.NOT_MOVING;
 	
 	public void claws(boolean clawsUpBumper, boolean clawsDownBumper) {
 		switch(currentClawsState) {

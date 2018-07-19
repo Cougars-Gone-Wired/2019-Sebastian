@@ -3,18 +3,18 @@ package org.usfirst.frc.team2996.robot;
 import edu.wpi.first.wpilibj.Talon;
 
 public class Shooter {
-
-	public enum ShooterStates {
-		NOT_MOVING, SPINNING
-	}
-	
-	ShooterStates currentShooterState = ShooterStates.NOT_MOVING;
 	
 	private Talon shooterMotor;
 	
 	public Shooter() {
 		shooterMotor = new Talon(Constants.SHOOTER_MOTOR_PORT);
 	}
+	
+	public enum ShooterStates {
+		NOT_MOVING, SPINNING
+	}
+	
+	ShooterStates currentShooterState = ShooterStates.NOT_MOVING;
 	
 	public void shooter(boolean shooterButton) {
 		switch(currentShooterState) {
