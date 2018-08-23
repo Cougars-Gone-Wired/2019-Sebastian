@@ -27,7 +27,7 @@ public class Robot extends IterativeRobot {
 		
 		shooter.shooter(controller.isShooterButton());
 		chain.chain(controller.getChainTrigger());
-		claws.claws(controller.isClawsUpBumper(), controller.isClawsDownBumper());
+		claws.claws(controller.isClawsUpBumper(), controller.getClawsDownTrigger());
 		drive.arcadeDrive(controller.getDriveForwardAxis(), controller.getDriveTurnAxis());
 	}
 }

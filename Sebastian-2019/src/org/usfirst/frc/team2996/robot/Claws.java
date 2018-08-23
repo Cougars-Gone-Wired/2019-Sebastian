@@ -16,20 +16,20 @@ public class Claws {
 	
 	ClawsStates currentClawsState = ClawsStates.NOT_MOVING;
 	
-	public void claws(boolean clawsUpBumper, boolean clawsDownBumper) {
+	public void claws(boolean clawsUpBumper, double clawsDownTrigger) {
 		switch(currentClawsState) {
 		case NOT_MOVING:
-			if (clawsUpBumper && !clawsDownBumper) {
+			if (clawsUpBumper && clawsDownTrigger < 0.15) {
 				clawsMotor.set(1);
 				currentClawsState = ClawsStates.GOING_UP;
-			} else if (!clawsUpBumper && clawsDownBumper) {
+			} else if (!clawsUpBumper && clawsDownTrigger >= 0.15) {
 				clawsMotor.set(-1);
 				currentClawsState = ClawsStates.GOING_DOWN;
 			}
 			break;
 		case GOING_UP:
 		case GOING_DOWN:
-			if (!clawsUpBumper && !clawsDownBumper) {
+			if (!clawsUpBumper && clawsDownTrigger < 0.15) {
 				clawsMotor.set(0);
 				currentClawsState = ClawsStates.NOT_MOVING;
 			}

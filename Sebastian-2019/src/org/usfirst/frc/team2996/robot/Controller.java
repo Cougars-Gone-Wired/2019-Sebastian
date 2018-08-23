@@ -8,7 +8,7 @@ public class Controller {
 	private boolean shooterButton;
 	private double chainTrigger;
 	private boolean clawsUpBumper;
-	private boolean clawsDownBumper;
+	private double clawsDownTrigger;
 	private double driveForwardAxis;
 	private double driveTurnAxis;
 	
@@ -20,7 +20,7 @@ public class Controller {
 		shooterButton = controller.getRawButton(Constants.SHOOTER_BUTTON);
 		chainTrigger = controller.getRawAxis(Constants.CHAIN_TRIGGER);
 		clawsUpBumper = controller.getRawButton(Constants.CLAWS_UP_BUMPER);
-		clawsDownBumper = controller.getRawButton(Constants.CLAWS_DOWN_BUMBER);
+		clawsDownTrigger = controller.getRawAxis(Constants.CLAWS_DOWN_TRIGGER);
 		driveForwardAxis = controller.getRawAxis(Constants.DRIVE_FORWARD_AXIS);
 		driveTurnAxis = controller.getRawAxis(Constants.DRIVE_TURN_AXIS);
 	}
@@ -37,8 +37,8 @@ public class Controller {
 		return clawsUpBumper;
 	}
 
-	public boolean isClawsDownBumper() {
-		return clawsDownBumper;
+	public double getClawsDownTrigger() {
+		return clawsDownTrigger;
 	}
 	
 	public double getDriveForwardAxis() {

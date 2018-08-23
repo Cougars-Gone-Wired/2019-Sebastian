@@ -5,8 +5,8 @@ public class Constants {
 	static final int CONTROLLER_PORT = 0;
 	static final int SHOOTER_BUTTON = 1;
 	static final int CHAIN_TRIGGER = 3;
-	static final int CLAWS_UP_BUMPER = 6;
-	static final int CLAWS_DOWN_BUMBER = 5;
+	static final int CLAWS_UP_BUMPER = 5;
+	static final int CLAWS_DOWN_TRIGGER = 2;
 	static final int DRIVE_FORWARD_AXIS = 1;
 	static final int DRIVE_TURN_AXIS = 4;
 	
