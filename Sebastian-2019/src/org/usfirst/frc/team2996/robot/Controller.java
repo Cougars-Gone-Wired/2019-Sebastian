@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.Joystick;
 public class Controller {
 
 	private Joystick controller;
-	private boolean shooterButton;
+	private boolean shooterBumper;
 	private double chainTrigger;
 	private boolean clawsUpBumper;
 	private double clawsDownTrigger;
@@ -17,7 +17,7 @@ public class Controller {
 	}
 	
 	public void setControllerInputValues() {
-		shooterButton = controller.getRawButton(Constants.SHOOTER_BUTTON);
+		shooterBumper = controller.getRawButton(Constants.SHOOTER_BUMPER);
 		chainTrigger = controller.getRawAxis(Constants.CHAIN_TRIGGER);
 		clawsUpBumper = controller.getRawButton(Constants.CLAWS_UP_BUMPER);
 		clawsDownTrigger = controller.getRawAxis(Constants.CLAWS_DOWN_TRIGGER);
@@ -25,8 +25,8 @@ public class Controller {
 		driveTurnAxis = controller.getRawAxis(Constants.DRIVE_TURN_AXIS);
 	}
 	
-	public boolean isShooterButton() {
-		return shooterButton;
+	public boolean isShooterBumper() {
+		return shooterBumper;
 	}
 
 	public double getChainTrigger() {

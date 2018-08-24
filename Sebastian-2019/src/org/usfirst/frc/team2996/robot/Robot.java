@@ -25,7 +25,7 @@ public class Robot extends IterativeRobot {
 	public void teleopPeriodic() {
 		controller.setControllerInputValues();
 		
-		shooter.shooter(controller.isShooterButton());
+		shooter.shooter(controller.isShooterBumper());
 		chain.chain(controller.getChainTrigger());
 		claws.claws(controller.isClawsUpBumper(), controller.getClawsDownTrigger());
 		drive.arcadeDrive(controller.getDriveForwardAxis(), controller.getDriveTurnAxis());

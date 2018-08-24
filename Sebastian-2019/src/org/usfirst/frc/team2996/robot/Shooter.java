@@ -16,16 +16,16 @@ public class Shooter {
 	
 	ShooterStates currentShooterState = ShooterStates.NOT_MOVING;
 	
-	public void shooter(boolean shooterButton) {
+	public void shooter(boolean shooterBumper) {
 		switch(currentShooterState) {
 		case NOT_MOVING:
-			if (shooterButton) {
+			if (shooterBumper) {
 				shooterMotor.set(Constants.SHOOTER_SPEED);
 				currentShooterState = ShooterStates.SPINNING;
 			}
 			break;
 		case SPINNING:
-			if (!shooterButton) {
+			if (!shooterBumper) {
 				shooterMotor.set(0);
 				currentShooterState = ShooterStates.NOT_MOVING;
 			}

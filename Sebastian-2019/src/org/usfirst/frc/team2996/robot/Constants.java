@@ -3,7 +3,7 @@ package org.usfirst.frc.team2996.robot;
 public class Constants {
 
 	static final int CONTROLLER_PORT = 0;
-	static final int SHOOTER_BUTTON = 1;
+	static final int SHOOTER_BUMPER = 3;
 	static final int CHAIN_TRIGGER = 3;
 	static final int CLAWS_UP_BUMPER = 5;
 	static final int CLAWS_DOWN_TRIGGER = 2;
